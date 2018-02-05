@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <default sync-j="4" revision="master"/>
+
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="https://github.com/kraj" name="himvis"/>
+  <remote fetch="https://github.com/openembedded" name="oe"/>
+
+  <project remote="himvis" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+  <project remote="himvis" name="meta-96boards" path="sources/meta-96boards"/>
+  <project remote="himvis" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="himvis" revision="kraj/nometro" name="meta-wpe" path="sources/meta-wpe"/>
+  <project remote="himvis" name="poky" path="sources/poky"/>
+  <project remote="himvis" name="flowrpi" path="sources/base">
+    <linkfile dest="setup.sh" src="setup.sh"/>
+  </project>
+
+</manifest>
