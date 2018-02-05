@@ -2,7 +2,7 @@
 
 An OpenEmbedded distribution for RaspberryPi optimised for visual communication/digital signage. The image includes WPEWebkit and an OMX based driver for gstreamer.
 
-Setting up workspace
+## Setting up workspace
 
 you need to have repo installed and use it as:
 
@@ -32,7 +32,7 @@ bitbake wpe-eglfs-image
 ```
 The source code is checked out at ```<TOPDIR>/sources``` folder
 
-Create Bootable SD-Card
+## Create Bootable SD-Card
  
  ```shell
 sudo dd if=tmp/deploy/images/raspberrypi3/wpe-eglfs-image-raspberrypi3.rpi-sdimg of=/dev/sdX
@@ -43,7 +43,7 @@ when you insert the card into your computer.
  
 Once booted login as ‘root’ with no password
  
-Run
+## Run
 ```shell
 wpe https://youtube.com/tv
  ```
@@ -64,3 +64,18 @@ With systemd if dhcp does not work then you have to set /etc/resolv.conf symlink
 ```shell
 ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
+## Using Online Package Management
+
+This needs RPI and build machine to be on same network.
+
+Start a webserver in deploy/ipk directory of build system
+```
+cd tmp/deploy/ipk && python3 -m http.server 8000
+```
+
+Now target can be updated from build machine generated packages
+```
+opkg update
+opkg upgrade
+```
+
