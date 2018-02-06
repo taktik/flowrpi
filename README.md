@@ -12,6 +12,12 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/rep
 chmod a+x ~/bin/repo
 ```
 
+Please note that repo requires python2, some distributions which default to python3 might need below fix
+```
+sed -i "s%/usr/bin/env python$%/usr/bin/env python2%" ~/bin/repo
+```
+you might have to re-run this command everytime repo tool is updated in ~/bin/repo
+
 Download source:
 
 ```shell
